@@ -1,3 +1,9 @@
+/**
+ * Ajax.Fetch
+ * A simple Ajax wrapper
+ * @author Zayn Ali [https://www.facebook.com/zaynali53]
+ * @link   [https://github.com/zaynali53/Ajax.fetch]
+ */
 var Ajax = (function (Ajax) {
 
     "use strict";
@@ -26,7 +32,7 @@ var Ajax = (function (Ajax) {
                         callback(response);
                     }
                 }
-            }
+            };
         }
     };
 
