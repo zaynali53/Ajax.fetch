@@ -9,13 +9,13 @@ var Ajax = (function (Ajax) {
     "use strict";
 
     Ajax.fetch = function (url, callback, format) {
-        if (
-            ( typeof callback === 'function' || typeof callback != 'undefined' ) &&
-            ( typeof format === 'string' || typeof format != 'undefined' )
-        ) {
+        if (( typeof callback === 'function' || typeof callback != 'undefined' )
+            && ( typeof format === 'string' || typeof format != 'undefined' )) {
+
             return Ajax._makeRequest(url, callback, format);
         }
         else if ( typeof callback === 'function' || typeof callback != 'undefined') {
+
             return Ajax._makeRequest(url, callback);
         }
     };
@@ -52,25 +52,30 @@ var Ajax = (function (Ajax) {
     };
 
     Ajax._createXhr = function () {
+
         var object;
 
         if (window.ActiveXObject) {
             try {
                 object = new ActiveXObject("Microsoft.XMLHTTP");
-            } catch(e) {
+            }
+            catch(e) {
                 object = false;
             }
-        } else {
+        }
+        else {
             try {
                 object = new XMLHttpRequest();
-            } catch(e) {
+            }
+            catch(e) {
                 object = false;
             }
         }
 
         if ( ! object) {
             console.log("Your browser does not support AJAX!");
-        } else {
+        }
+        else {
             return object;
         }
     };
